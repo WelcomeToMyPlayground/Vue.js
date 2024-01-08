@@ -1,11 +1,11 @@
 <template>
 
   <div class="menu">
-    <a v-for="작명 in 메뉴들" :key="작명">Home</a>
+    <!-- <a v-for="i in 메뉴들" :key="i">{{ i }}</a> -->
+    <a v-for="a in 메뉴들" :key="a">{{ a }}</a>
 
   </div>
 
-  <img alt="Vue logo" src="./assets/logo.png">
   <div>
     <h4>{{ products[0] }}</h4>
     <p>{{ price1 }}만원</p>
@@ -22,7 +22,7 @@
 
 <script>
 
-export default {
+export default { 
   name: 'App',
   data(){
     return {
@@ -46,7 +46,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 
 .menu {
