@@ -1,9 +1,10 @@
 <template>
 
-  <div class="black-bg">
+  <div class="black-bg" v-if="모달창열렸니 == true">
     <div class="white-bg">
       <h4>상세페이지임</h4>
       <p>상세페이지 내용임</p>
+      <button @click="모달창열렸니 = false">닫기</button>
     </div>
   </div>
 
@@ -13,7 +14,7 @@
 
   <div>
     <img src="./assets/room0.jpg" class="room-img">
-    <h4>{{ products[0] }}</h4>
+    <h4 @click="모달창열렸니 = true">{{ products[0] }}</h4>
     <p>{{ price1 }}만원</p>
     <button v-on:click="신고수[0]++">허위매물신고</button>
     <span> 신고 수 : {{ 신고수[0] }}</span>
