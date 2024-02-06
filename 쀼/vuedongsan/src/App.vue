@@ -33,6 +33,7 @@
     <button @click="신고수[2] += 1">허위매물신고</button>
     <span>신고 수: {{ 신고수[2] }}</span>
   </div>
+  
 
 </template>
 

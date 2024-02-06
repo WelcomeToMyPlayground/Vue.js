@@ -56,3 +56,14 @@ App.vue
 - package.json 파일 : 설치한 라이브러리 버전, 프로젝트 설정들이 기록되어있는 파일
 
 -------------------------------------------------------------
+
+vue cli 설치 : npm install -g @vue/cli
+
+vue 폴더 생성 : vue.cmd create test 
+(vue create test 오류나시는 분들 이렇게쓰시면 됩니다
+그리고 vue2로 설치 해야합니다!!! )
+
+vue-router 설치 : npm install vue-router@3
+ (npm install vue-router --save 오류나시는 분들 이렇게 쓰시면 됩니다. 참고로 @3은 버전!)
+
+bootstrap-vue 설치 : npm install vue bootstrap-vue bootstrap
