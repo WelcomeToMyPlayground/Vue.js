@@ -1,22 +1,28 @@
 <template>
 
-  <div class="menu">
-    <a v-for="list in menu" :key="list">{{list}}</a>
-
+  <div class="black-bg" v-if="modal == true">
+    <div class="white-bg">
+      <h4>상세페이지</h4>
+      <p>상세페이지 내용</p>
+      <button v-on:click="modal = false">닫기</button>
+    </div>
   </div>
 
-  <h1>원룸샵</h1>
+  <div class="menu">
+    <a v-for="list in menu" :key="list">{{list}}</a>
+  </div>
+  
   <div>
-    <img src="./assets/room0.jpg" class="room-img">
-    <h4 :style="스타일">{{ products[0] }}</h4>
-    <p>{{price1}}만원</p>
+    <img :src="원룸들[0].image" class="room-img"> 
+    <h4 :style="스타일" @click="modal = true">{{ 원룸들[0].title }}</h4>
+    <p>{{ 원룸들[0].price}}원</p>
     <button v-on:click="increase1">허위매물신고</button>
     <span>신고수 : {{ 신고수[0] }} </span>
   </div>
 
   <div>
     <img src="./assets/room1.jpg" class="room-img">
-    <h4 :style="스타일1[1]">{{ products[1] }}</h4>
+    <h4 :style="스타일1[1]" @click="modal = true">{{ products[1] }}</h4>
     <p>{{prices[1]}}만원</p>
     <button @click="increase2">허위매물신고</button>
     <span>신고수 : {{ 신고수[1] }} </span>
@@ -24,7 +30,7 @@
 
   <div>
     <img src="./assets/room2.jpg" class="room-img">
-    <h4 style="color:red">{{ products[2] }}</h4>
+    <h4 style="color:red" v-on:click="modal = true">{{ products[2] }}</h4>
     <p>{{prices[2]}}만원</p>
     <button v-on:click="increase3()">허위매물신고</button> 
     <span>신고수 : {{ 신고수[2] }}</span>
@@ -39,25 +45,24 @@
 </template>
 
 <script>
-
-function 어쩌구(){
-  console.log('어쩌구우우');
-}
-
-어쩌구();
+import data from './assets/oneroom.js';
+import {apple,apple2} from './asserts/oneroom.js';
+apple;
 
 export default {
   name: 'App',
   data(){
     return {
-      price1 : 60,
-      price2 : 70,
-      prices : [60,70,80],
-      스타일 : 'color:red',
-      스타일1 : ['color:red','color:blue','color:yellow'],
-      products : ['역삼동원룸','천호동원룸','마포구원룸'],
+      원룸들: data, // import 해온거 
+      modal : false,
+      신고수 : [0,0,0],
       menu : ['Home','Shop','About'],
-      신고수 : [0,0,0]
+      products : ['역삼동원룸','천호동원룸','마포구원룸'],
+      스타일1 : ['color:red','color:blue','color:yellow'],
+      스타일 : 'color:red',
+      prices : [60,70,80],
+      price2 : 70,
+      price1 : 60
     }
   },
   methods:{
@@ -97,4 +102,23 @@ export default {
   width: 100%;
   margin-top: 40px;
 }
+body {
+  margin : 0;
+}
+div {
+  box-sizing: border-box;
+}
+.black-bg {
+  width: 100%;
+  height:100%;
+  background: rgba(0,0,0,0.5);
+  position: fixed;
+  padding: 20px;
+}
+.white-bg {
+  width: 100%;
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+} 
 </style>
