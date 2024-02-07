@@ -46,8 +46,9 @@
 
 <script>
 import data from './assets/oneroom.js';
-import {apple,apple2} from './asserts/oneroom.js';
+import {apple,apple2} from './assets/oneroom.js';
 apple;
+apple2;
 
 export default {
   name: 'App',
