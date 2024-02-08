@@ -203,12 +203,51 @@ v-if="조건식"
 
 import/export 문법 쓰는법
 
-1. export default 변수명
-2. import 변수명 from 그파일경로
+1. export default 변수명                   (내보내기)
+2. import 작명 from 그파일경로            (가져오기)
+
+
+- export default는 파일 맨마지막에 딱 한번 사용 가능
+- import시 작명은 자유롭게 가능
+
+(oneroom.js)
+var apple = 10;
+export default apple
+
+(App.vue)
+import 어쩌구 from './oneroom.js파일경로'
+
+-----------------------------------------------------------------
+
+export 해야할게 많으면 export{} 문법을 사용함
+
+- export는 원하는 만큼 사용 가능
+- 이걸 import 시엔 작명이 불가능하고 export 했던 변수명 그대로 적어야 함
+
+
+(oneroom.js)
+var apple = 10;
+var apple2 = 100;
+export { apple, apple2 }
+
+(App.vue)
+import { apple, apple2 } from './oneroom.js파일경로'
 
 -----------------------------------------------------------------
 
 HTML 태그 안 속성 데이터 바인딩은 :src 또는 :style 같이 :어쩌구
+-> 아래에 data로 저장되어있는걸 사용하는 경우
+
 HTML 태그 사이 내용 데이터 바인딩은 {{ 어쩌구 }}
+-> 내용물
 
 -----------------------------------------------------------------
+
+시작이 { 이거면 무조건 object 자료!
+
+-----------------------------------------------------------------
+
+데이터 바인딩
+
+-> data() 란에다가 보관한 후 원하는 html 코드에 {{데이터바인딩}} 하면 됨
+

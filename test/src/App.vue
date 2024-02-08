@@ -12,35 +12,59 @@
     <a v-for="list in menu" :key="list">{{list}}</a>
   </div>
   
-  <div>
-    <img :src="원룸들[0].image" class="room-img"> 
-    <h4 :style="스타일" @click="modal = true">{{ 원룸들[0].title }}</h4>
-    <p>{{ 원룸들[0].price}}원</p>
-    <button v-on:click="increase1">허위매물신고</button>
-    <span>신고수 : {{ 신고수[0] }} </span>
-  </div>
-
-  <div>
-    <img src="./assets/room1.jpg" class="room-img">
-    <h4 :style="스타일1[1]" @click="modal = true">{{ products[1] }}</h4>
-    <p>{{prices[1]}}만원</p>
-    <button @click="increase2">허위매물신고</button>
-    <span>신고수 : {{ 신고수[1] }} </span>
-  </div>
-
-  <div>
-    <img src="./assets/room2.jpg" class="room-img">
-    <h4 style="color:red" v-on:click="modal = true">{{ products[2] }}</h4>
-    <p>{{prices[2]}}만원</p>
-    <button v-on:click="increase3()">허위매물신고</button> 
-    <span>신고수 : {{ 신고수[2] }}</span>
-  </div>
-  
   <!-- 축약 -->
   <!-- <div v-for="productList in products" :key="productList">
     <h4>{{ productList }}</h4>
     <p>{{ price1 }}</p>
   </div> -->
+
+  <div v-for="(list,i) in 원룸들" :key="i">
+    <img :src="list[i].image" class="room-img"> 
+    <h4 :style="스타일" @click="modal = true">{{ list[i].title }}</h4>
+    <p>{{ list[i].price }}원</p>
+    <button v-on:click="increase1()">허위매물신고</button>
+    <span>신고수 : {{ 신고수[0] }} </span>
+  </div>
+
+  <div>
+    <img :src="원룸들[1].image" class="room-img">
+    <h4 :style="스타일1[1]" @click="modal = true">{{ 원룸들[1].title }}</h4>
+    <p>{{ 원룸들[1].price }}원</p>
+    <button @click="increase2()">허위매물신고</button>
+    <span>신고수 : {{ 신고수[1] }} </span>
+  </div>
+
+  <div>
+    <img :src="원룸들[2].image" class="room-img">
+    <h4 @click="modal = true">{{ 원룸들[2].title }}</h4>
+    <p>{{ 원룸들[2].price }}원</p>
+    <button v-on:click="increase3()">허위매물신고</button>
+    <span>신고수 : {{ 신고수[2] }}</span>
+  </div>
+  
+  
+  <div>
+    <img :src="원룸들[3].image" class="room-img">
+    <h4 @click="modal = true">{{ 원룸들[3].title }}</h4>
+    <p>{{ 원룸들[3].price }}원</p>
+  </div>
+
+  <div>
+    <img :src="원룸들[4].image" class="room-img">
+    <h4 @click="modal = true">{{ 원룸들[4].title }}</h4>
+    <p>{{ 원룸들[4].price }}원</p>
+  </div>
+
+  <div>
+    <img :src="원룸들[5].image" class="room-img">
+    <h4 @click="modal = true">{{ 원룸들[5].title }}</h4>
+    <p>{{ 원룸들[5].price }}원</p>
+  </div>
+
+
+
+
+
 
 </template>
 
