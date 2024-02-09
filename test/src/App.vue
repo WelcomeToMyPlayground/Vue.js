@@ -19,53 +19,19 @@
   </div> -->
 
   <div v-for="(list,i) in 원룸들" :key="i">
-    <img :src="list[i].image" class="room-img"> 
-    <h4 :style="스타일" @click="modal = true">{{ list[i].title }}</h4>
-    <p>{{ list[i].price }}원</p>
-    <button v-on:click="increase1()">허위매물신고</button>
-    <span>신고수 : {{ 신고수[0] }} </span>
+    <img :src="list.image" class="room-img"> 
+    <h4 @click="modal = true">{{ list.title }}</h4>
+    <p>{{ list.price }}원</p>
   </div>
 
-  <div>
+  <!-- <div>
     <img :src="원룸들[1].image" class="room-img">
     <h4 :style="스타일1[1]" @click="modal = true">{{ 원룸들[1].title }}</h4>
     <p>{{ 원룸들[1].price }}원</p>
     <button @click="increase2()">허위매물신고</button>
     <span>신고수 : {{ 신고수[1] }} </span>
-  </div>
-
-  <div>
-    <img :src="원룸들[2].image" class="room-img">
-    <h4 @click="modal = true">{{ 원룸들[2].title }}</h4>
-    <p>{{ 원룸들[2].price }}원</p>
-    <button v-on:click="increase3()">허위매물신고</button>
-    <span>신고수 : {{ 신고수[2] }}</span>
-  </div>
+  </div> -->
   
-  
-  <div>
-    <img :src="원룸들[3].image" class="room-img">
-    <h4 @click="modal = true">{{ 원룸들[3].title }}</h4>
-    <p>{{ 원룸들[3].price }}원</p>
-  </div>
-
-  <div>
-    <img :src="원룸들[4].image" class="room-img">
-    <h4 @click="modal = true">{{ 원룸들[4].title }}</h4>
-    <p>{{ 원룸들[4].price }}원</p>
-  </div>
-
-  <div>
-    <img :src="원룸들[5].image" class="room-img">
-    <h4 @click="modal = true">{{ 원룸들[5].title }}</h4>
-    <p>{{ 원룸들[5].price }}원</p>
-  </div>
-
-
-
-
-
-
 </template>
 
 <script>
