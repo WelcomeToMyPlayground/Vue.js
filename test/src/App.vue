@@ -1,13 +1,27 @@
-<template>
+<template>  
+
+  <div v-if="1 == 2">
+    if 안녕하세요
+  </div>
+  <div v-else-if="1 == 1">
+    else if 안녕하세요
+  </div>
+  <div v-else>
+    else 안녕하세요
+  </div>
+
+  <!-- 모달창, 상세페이지-->
 
   <div class="black-bg" v-if="modal == true">
     <div class="white-bg">
-      <h4>상세페이지</h4>
-      <p>상세페이지 내용</p>
+      <h4>{{ 원룸들[누른거].title}}</h4>
+      <p>상품 설명 : {{ 원룸들[누른거].content}}</p>
+      <img :src="원룸들[누른거].image">
+      <p>가격 : {{ 원룸들[누른거].price }}원</p>
       <button v-on:click="modal = false">닫기</button>
     </div>
   </div>
-
+  
   <div class="menu">
     <a v-for="list in menu" :key="list">{{list}}</a>
   </div>
@@ -19,8 +33,8 @@
   </div> -->
 
   <div v-for="(list,i) in 원룸들" :key="i">
-    <img :src="list.image" class="room-img"> 
-    <h4 @click="modal = true">{{ list.title }}</h4>
+    <img :src="원룸들[i].image" class="room-img"> 
+    <h4 @click="modal = true; 누른거 = i;">{{ list.title }}</h4>
     <p>{{ list.price }}원</p>
   </div>
 
@@ -44,6 +58,7 @@ export default {
   name: 'App',
   data(){
     return {
+      누른거: 0,
       원룸들: data, // import 해온거 
       modal : false,
       신고수 : [0,0,0],
