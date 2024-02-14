@@ -1,30 +1,25 @@
 <template>  
-
-  <div v-if="1 == 2">
-    if 안녕하세요
-  </div>
-  <div v-else-if="1 == 1">
-    else if 안녕하세요
-  </div>
-  <div v-else>
-    else 안녕하세요
-  </div>
-
-  <!-- 모달창, 상세페이지-->
-
+ 
+ <!-- 모달창, 상세페이지
   <div class="black-bg" v-if="modal == true">
     <div class="white-bg">
+      <Discount/>
+      <img :src="원룸들[누른거].image" style="width:100%">
       <h4>{{ 원룸들[누른거].title}}</h4>
       <p>상품 설명 : {{ 원룸들[누른거].content}}</p>
-      <img :src="원룸들[누른거].image">
       <p>가격 : {{ 원룸들[누른거].price }}원</p>
       <button v-on:click="modal = false">닫기</button>
     </div>
   </div>
-  
+   -->
+
+  <Modal/>
+
   <div class="menu">
     <a v-for="list in menu" :key="list">{{list}}</a>
   </div>
+  
+  <Discount/>
   
   <!-- 축약 -->
   <!-- <div v-for="productList in products" :key="productList">
@@ -51,6 +46,8 @@
 <script>
 import data from './assets/oneroom.js';
 import {apple,apple2} from './assets/oneroom.js';
+import Discount from './Discount.vue';
+import Modal from './Modal.vue';
 apple;
 apple2;
 
@@ -83,6 +80,8 @@ export default {
     }
   },
   components:{
+    Discount : Discount,
+    Modal,
   }
 }
 </script>
