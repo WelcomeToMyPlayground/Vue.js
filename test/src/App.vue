@@ -1,6 +1,6 @@
 <template>  
  
- <!-- 모달창, 상세페이지
+ <!-- 모달창, 상세페이지 원본
   <div class="black-bg" v-if="modal == true">
     <div class="white-bg">
       <Discount/>
@@ -13,33 +13,25 @@
   </div>
    -->
 
-  <Modal/>
+  <!-- 컴포넌트 -->
+  <Modal :원룸들="원룸들" :누른거="누른거" :modal="modal"/>
 
   <div class="menu">
     <a v-for="list in menu" :key="list">{{list}}</a>
   </div>
   
+  <!-- 컴포넌트 -->
   <Discount/>
   
-  <!-- 축약 -->
-  <!-- <div v-for="productList in products" :key="productList">
-    <h4>{{ productList }}</h4>
-    <p>{{ price1 }}</p>
-  </div> -->
-
+  <!-- 원본
   <div v-for="(list,i) in 원룸들" :key="i">
     <img :src="원룸들[i].image" class="room-img"> 
     <h4 @click="modal = true; 누른거 = i;">{{ list.title }}</h4>
     <p>{{ list.price }}원</p>
-  </div>
-
-  <!-- <div>
-    <img :src="원룸들[1].image" class="room-img">
-    <h4 :style="스타일1[1]" @click="modal = true">{{ 원룸들[1].title }}</h4>
-    <p>{{ 원룸들[1].price }}원</p>
-    <button @click="increase2()">허위매물신고</button>
-    <span>신고수 : {{ 신고수[1] }} </span>
   </div> -->
+  
+  <!-- 컴포넌트 -->
+  <Card :원룸들="원룸들" />
   
 </template>
 
@@ -48,6 +40,7 @@ import data from './assets/oneroom.js';
 import {apple,apple2} from './assets/oneroom.js';
 import Discount from './Discount.vue';
 import Modal from './Modal.vue';
+import Card from './Card.vue';
 apple;
 apple2;
 
@@ -82,6 +75,7 @@ export default {
   components:{
     Discount : Discount,
     Modal,
+    Card
   }
 }
 </script>
