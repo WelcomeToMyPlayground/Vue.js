@@ -21,7 +21,7 @@
   </div>
   
   <!-- 컴포넌트 -->
-  <Discount/>
+  <Discount v-bind="오브젝트"/>
   
   <!-- 원본
   <div v-for="(list,i) in 원룸들" :key="i">
@@ -31,8 +31,18 @@
   </div> -->
   
   <!-- 컴포넌트 -->
-  <Card :원룸들="원룸들" />
-  
+  <!-- <Card :원룸들="원룸들" /> -->
+
+  <Card :원룸="원룸들[i]" v-for="(작명,i) in 원룸들" :key="작명"/>
+
+  <!-- 반복문 안쓰고 하드코딩
+  <Card :원룸="원룸들[0]"/>  
+  <Card :원룸="원룸들[1]"/>
+  <Card :원룸="원룸들[2]"/>
+  <Card :원룸="원룸들[3]"/>
+  <Card :원룸="원룸들[4]"/>
+  <Card :원룸="원룸들[5]"/>
+   -->
 </template>
 
 <script>
@@ -48,6 +58,7 @@ export default {
   name: 'App',
   data(){
     return {
+      오브젝트 : {name : 'kim', age : 20},
       누른거: 0,
       원룸들: data, // import 해온거 
       modal : false,
@@ -75,7 +86,7 @@ export default {
   components:{
     Discount : Discount,
     Modal,
-    Card
+    Card,
   }
 }
 </script>
