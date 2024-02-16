@@ -22,7 +22,7 @@
 export default {
   name : 'Card',
   props: {
-    // 원룸들 : Array,
+    // 원룸들 : Array, 
     원룸 : Object,
   }
 }
