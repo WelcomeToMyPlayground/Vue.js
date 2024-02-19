@@ -12,7 +12,7 @@
   <!-- <div> 1개를 컴포넌트화 -->
    <div>
     <img :src="원룸.image" class="room-img"> 
-    <h4>{{ 원룸.title }}</h4>
+    <h4 @click="send()">{{ 원룸.title }}</h4>
     <p>{{ 원룸.price }}원</p>
   </div>
   
@@ -24,6 +24,11 @@ export default {
   props: {
     // 원룸들 : Array, 
     원룸 : Object,
+  },
+  methods: {
+    send(){
+      this.$emit('openModal', this.원룸.id);
+    }
   }
 }
 </script>

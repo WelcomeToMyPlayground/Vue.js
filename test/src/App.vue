@@ -14,7 +14,8 @@
    -->
 
   <!-- 컴포넌트 -->
-  <Modal :원룸들="원룸들" :누른거="누른거" :modal="modal"/>
+  <Modal @closeModal="modal = false" 
+  :원룸들="원룸들" :누른거="누른거" :modal="modal"/>
 
   <div class="menu">
     <a v-for="list in menu" :key="list">{{list}}</a>
@@ -33,7 +34,8 @@
   <!-- 컴포넌트 -->
   <!-- <Card :원룸들="원룸들" /> -->
 
-  <Card :원룸="원룸들[i]" v-for="(작명,i) in 원룸들" :key="작명"/>
+  <Card @openModal="modal = true; 누른거 = $event"
+  :원룸="원룸들[i]" v-for="(작명,i) in 원룸들" :key="작명"/>
 
   <!-- 반복문 안쓰고 하드코딩
   <Card :원룸="원룸들[0]"/>  
