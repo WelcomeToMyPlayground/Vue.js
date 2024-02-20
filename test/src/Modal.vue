@@ -9,7 +9,7 @@
       <input v-model.number ="month">
       <!-- <input @input="month = $event.target.value"> -->
       <p>{{ month }}개월 선택함 : {{ 원룸들[누른거].price + month }}원</p>
-      <button @onclick="$emit('closeModal')">닫기</button>
+      <button @click="$emit('closeModal')">닫기</button>
       <!-- <button v-on:click="modal = false">닫기</button> -->
     </div>
   </div>
