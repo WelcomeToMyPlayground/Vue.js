@@ -21,8 +21,15 @@ export default {
   name : 'Modal',
   data(){
     return{
-      month : 1,
-    
+      month : 1
+    }
+  },
+  watch : {
+    month(a){
+      if(a >= 13){
+        alert('13 이상 입력하지 마세요')
+      }
+      // month라는 데이터가 변할 때마다 여기있는 코드가 실행됨 
     }
   },
   props: {
