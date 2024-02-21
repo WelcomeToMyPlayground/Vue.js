@@ -14,7 +14,8 @@
    -->
 
   <!-- 컴포넌트 -->
-  <Modal @closeModal="modal = false" :원룸들="원룸들" :누른거="누른거" :modal="modal"/>
+  <Modal @closeModal="modal = false" 
+  :원룸들="원룸들" :누른거="누른거" :modal="modal"/>
 
   <div class="menu">
     <a v-for="list in menu" :key="list">{{list}}</a>
