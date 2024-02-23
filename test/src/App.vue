@@ -13,9 +13,10 @@
   </div>
    -->
 
-  <!-- 컴포넌트 -->
-  <Modal @closeModal="modal = false" 
-  :원룸들="원룸들" :누른거="누른거" :modal="modal"/>
+  <Transition name="fade">
+    <Modal @closeModal="modal = false" 
+    :원룸들="원룸들" :누른거="누른거" :modal="modal"/>
+  </Transition>
 
   <div class="menu">
     <a v-for="list in menu" :key="list">{{list}}</a>
@@ -96,6 +97,36 @@ export default {
 </script>
 
 <style>
+.fade-enter-from {
+  opacity: 0;
+  /* transform: translateY(-1000px); */
+}
+.fade-enter-active {
+  transition: all 1s;
+}
+.fade-enter-to {
+  opacity: 1;
+  /* transform: translateY(0px); */
+}
+
+.fade-leave-from {
+  opacity: 1;
+}
+.fade-leave-active {
+  transition: all 1s;
+}
+.fade-leave-to {
+  opacity: 0;
+}
+
+/* .start {
+  opacity: 0;
+  transition: all 1s;
+}
+.end {
+  opacity: 1;
+} */
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
