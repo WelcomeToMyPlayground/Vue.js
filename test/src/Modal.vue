@@ -26,8 +26,12 @@ export default {
   },
   watch : {
     month(a){
-      if(a >= 13){
-        alert('13 이상 입력하지 마세요')
+      if(isNaN(a) == true){
+        alert('문자는 입력할 수 없습니다')
+        this.month = 1;
+      } else if(a == ' '){
+        alert('공백은 입력하실 수 없습니다')
+        this.month = 1;
       }
       // month라는 데이터가 변할 때마다 여기있는 코드가 실행됨 
     }
